@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      form {
+          display:flex;
+          flex-direction: column;
+          gap:8px;
+          width:300px;
+      }
+  </style>
+</head>
+<body>
+  <h1>Update Existing Student 22222222</h1>
+
+
+   <p>We are updating studnet with id: <%= s._id %></p>
+
+
+  <!-- when button is pressed, send form data
+   to a POST endpont called /receivedata -->
+  <form action="/update2/<%= s._id %>" method="POST">              
+       <input type="text"
+           placeholder="Enter updated student name"
+           name="tbName"
+           value="<%= s.name %>"/>
+       <input type="text"
+           placeholder="Enter updated student gpa"
+           name="tbGPA"
+           value="<%= s.gpa %>"/>
+       <div>
+          <label>Tuition Paid?</label>
+           <% if (s.tuitionPaid === true)  { %>
+               <input type="checkbox" name="cbTuition" checked/> 
+           <% } else { %>
+               <input type="checkbox" name="cbTuition" />
+           <% } %>
+         
+      </div>
+      <button>Update</button>
+  </form>
+</body>
+</html>

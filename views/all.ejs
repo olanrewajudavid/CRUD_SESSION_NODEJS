@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* border-bottom:1px solid black; */
+            margin-bottom:20px;
+            padding:20px;
+            background-color: #dbe8e6;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 400;
+            box-shadow: 2px 2px 6px #282727;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Students</h1> 
+    <!-- all the students go here -->
+    <p>Number of students: <%= s.length %></p>
+    <a href="http://localhost:8080/insert">Add Student</a>
+
+    <% for (let i = 0; i < s.length; i++) { %>   
+        <div>
+            <p>Name:<%= s[i].name %></p>
+            <p>Id:  <%= s[i]._id %></p>
+            <p>GPA:<%= s[i].gpa %></p>
+            <p>Did you pay tuition? <%= s[i].tuitionPaid %></p>
+            <a href="/delete2/<%= s[i]._id %>">Click here to delete this student</a>
+            <a href="/update2/<%= s[i]._id %>">Click here to Update this student</a>
+        </div>     
+    <% } %>
+    
+</body>
+</html>

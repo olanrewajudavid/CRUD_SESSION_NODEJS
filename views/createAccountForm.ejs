@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      form {
+          display:flex;
+          flex-direction: column;
+          gap:8px;
+          width:300px;
+      }
+  </style>
+</head>
+<body>
+  <h1>Create An Account</h1>
+  <form action="/createAccount" method="POST">
+      <!-- TODO: Insert your form fields here -->
+       <input type="text" placeholder="Enter email address" name="tbEmail"/>
+       <input type="text" placeholder="Enter password" name="tbPassword"/>       
+       <select name="selUserType">
+           <option value="admin">Admin</option>
+           <option value="prof">Professor</option>
+           <option value="student">Student</option>
+       </select>
+       <button>Create Account</button>
+  </form>
+</body>
+</html>

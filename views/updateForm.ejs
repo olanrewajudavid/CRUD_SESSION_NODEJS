@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      form {
+          display:flex;
+          flex-direction: column;
+          gap:8px;
+          width:300px;
+      }
+  </style>
+</head>
+<body>
+  <h1>Update Existing Student</h1>
+  <!-- when button is pressed, send form data
+   to a POST endpont called /receivedata -->
+  <form action="/update" method="POST">      
+       <input type="text" placeholder="Enter the document id to update" name="tbDocId"/>
+       <input type="text" placeholder="Enter updated student name" name="tbName"/>
+       <input type="text" placeholder="Enter updated student gpa" name="tbGPA"/>
+       <div>
+          <label>Tuition Paid?</label>
+          <input type="checkbox" name="cbTuition"/>
+      </div>
+      <button>Update</button>
+  </form>
+</body>
+</html>
